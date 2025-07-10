@@ -149,3 +149,57 @@ button:hover {
   box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
   transform: scale(1.1);
 }
+
+/* ✅ Responsive Design */
+@media screen and (max-width: 840px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    align-items: center;
+  }
+
+  .contact-left h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  button {
+    align-self: center;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .icon-text {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-circle img {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -9,6 +9,7 @@
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .tab-btn {
@@ -45,6 +46,7 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .skill-meter {
@@ -99,6 +101,7 @@
   align-items: flex-start;
   justify-content: center;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .horizontal-box {
@@ -173,10 +176,9 @@
   color: yellowgreen;
   text-align: left;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1.2rem;
 }
 
 .project-card h3 {
@@ -197,6 +199,7 @@
   border-radius: 10px;
   margin-top: 1rem;
 }
+
 .animate-in {
   opacity: 0;
   transform: translateY(-40px) scale(0.8);
@@ -206,4 +209,53 @@
 .animate-in.show {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+/* 🔽 Responsive Optimization */
+@media screen and (max-width: 840px) {
+  .portfolio-section {
+    padding: 80px 1rem 3rem 1rem;
+  }
+
+  .portfolio-title,
+  .intern,
+  .port {
+    font-size: 2rem;
+  }
+
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .skill-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .horizontal-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .horizontal-connector {
+    display: none;
+  }
+
+  .project-card {
+    width: 95%;
+    font-size: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-image {
+    max-width: 100%;
+  }
+
+  .internship-details-box {
+    max-width: 100%;
+  }
 }

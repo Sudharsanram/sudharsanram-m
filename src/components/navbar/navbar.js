@@ -21,9 +21,10 @@ const Navbar = ({ onResumeClick }) => {
         <a href="#about" className="menulist" onClick={() => handleClick()}>About</a>
         <a href="#portfolio" className="menulist" onClick={() => handleClick()}>Portfolio</a>
         <span className="menulist" onClick={() => handleClick(onResumeClick)}>Resume</span>
+        <a href="#contact" className="menulist contact-menu-item" onClick={() => handleClick()}>Contact Me</a>
       </div>
 
-      <button className="menubtn" onClick={() => handleClick()}>
+      <button className="menubtn desktop-only" onClick={() => handleClick()}>
         <img src={contact} alt="contact" className="menubtnimg" />
         <a href="#contact" className="cont">Contact Me</a>
       </button>
