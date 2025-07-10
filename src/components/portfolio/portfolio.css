@@ -210,6 +210,17 @@
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+.darr{
+  height: 1.7rem;
+  border-radius: 2.2rem;
+  margin-left: 1rem;
+}
+.larr{
+  height: 1.7rem;
+  border-radius: 2.2rem;
+  margin-left: 1rem;
+  background-color: purple;
+}
 
 /* 🔽 Responsive Optimization */
 @media screen and (max-width: 840px) {

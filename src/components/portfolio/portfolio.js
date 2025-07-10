@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './portfolio.css';
 import proj1 from '../../assert/proj.png';
+import darraow from "../../assert/icons8-down-button.gif"
+import larrow from "../../assert/icons8-next-page.gif"
 
 const SkillMeter = ({ skill, percent, animate }) => {
   const radius = 70;
@@ -128,16 +130,16 @@ const Portfolio = () => {
         <div className="internship-section">
           <h1 className="intern">INTERNSHIP</h1>
           <div className="vertical-box" onClick={() => setShowCompany(!showCompany)}>
-            Internship Experience
+            Internship Experience <img src={darraow} alt="" className="darr" />
           </div>
           {showCompany && (
             <>
               <div className="vertical-line" />
               <div className="horizontal-flow">
                 <div className="horizontal-box" onClick={() => setShowDetails(!showDetails)}>
-                  Connect Infosystem
+                  Connect Infosystem  <img src={larrow} alt="" className='larr'/> 
                 </div>
-                {showDetails && (
+               {showDetails && (
                   <>
                     <div className="horizontal-connector" />
                     <div className="internship-details-box">
