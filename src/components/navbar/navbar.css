@@ -21,7 +21,7 @@
   background-color: #262150;
 }
 
-.menulist {
+/*.menulist {
   margin: 0;
   padding: 0.5rem 1rem;
   font-weight: bold;
@@ -36,7 +36,33 @@
   color: lightsalmon;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid;
+}*/
+.menulist {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
+
+
+.menulist::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: .2rem;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.menulist:hover::after {
+  width: 100%;
+}
+
 
 .menubtn {
   margin: 1rem;
