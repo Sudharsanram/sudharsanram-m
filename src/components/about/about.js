@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import mail from "../../assert/icons8-gmail-50.png"
 import linkedin from "../../assert/icons8-linkedin.gif"
 import git from "../../assert/icons8-github-30.png"
+import ser from "../../assert/icons8-analyze.gif"
 
 
 const About = () => {
@@ -17,7 +18,7 @@ const About = () => {
     <section id="about" className="about-section">
     <div className="about-wrapper">
 
-      <h1 className='head'>About Me</h1> 
+      <h1 className='head'>About Me <img src={ser} alt="" /></h1> 
       <span className='text1'>
        👋 Hi, I’m Sudharsan Ram M, a curious mind and tech enthusiast pursuing Computer Science and Engineering (IoT) at Saveetha Engineering College, Chennai.
       </span>

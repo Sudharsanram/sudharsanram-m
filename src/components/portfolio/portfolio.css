@@ -199,6 +199,19 @@
   border-radius: 10px;
   margin-top: 1rem;
 }
+.project-title{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 1.5rem;
+color: black;
+padding: 1rem;
+width: 100%;
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis;
+
+}
 
 .animate-in {
   opacity: 0;
@@ -220,6 +233,16 @@
   border-radius: 2.2rem;
   margin-left: 1rem;
   background-color: purple;
+}
+.pr{
+ width: 3rem;
+height: 3rem ;
+flex-shrink: 0;
+margin-left: 1rem;
+}
+.pro{
+  width: 3rem;
+  height: 3rem;
 }
 
 /* 🔽 Responsive Optimization */

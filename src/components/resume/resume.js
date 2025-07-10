@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import './resume.css';
+import dwn from "../../assert/icons8-export-pdf.gif"
 
 const Resume = React.forwardRef((props, ref) => {
   const titleRef = useRef();
@@ -37,7 +38,7 @@ const Resume = React.forwardRef((props, ref) => {
           download="Sudharsan_Ram_M-Resume.pdf"
           className="download-btn"
         >
-          Download Resume
+          Download Resume <img src={dwn} alt="" className='dwn'/>
         </a>
       </div>
 
@@ -55,7 +56,7 @@ const Resume = React.forwardRef((props, ref) => {
           download="Sudharsan_Ram_M-Resume.pdf"
           className="download-btn"
         >
-          Download Resume
+          Download Resume <img src={dwn} alt="" className='dwn'/>
         </a>
       </div>
     </section>

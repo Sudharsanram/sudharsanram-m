@@ -3,6 +3,8 @@ import './portfolio.css';
 import proj1 from '../../assert/proj.png';
 import darraow from "../../assert/icons8-down-button.gif"
 import larrow from "../../assert/icons8-next-page.gif"
+import pr from "../../assert/icons8-project.gif"
+import pro from "../../assert/icons8-blog.gif"
 
 const SkillMeter = ({ skill, percent, animate }) => {
   const radius = 70;
@@ -85,7 +87,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" ref={portfolioRef} className="portfolio-section">
-      <h1 className="port animate-in" ref={titleRef}>PORTFOLIO</h1>
+      <h1 className="port animate-in" ref={titleRef}>PORTFOLIO <img src={pro} alt="" className='pro' /></h1>
 
       <div className="portfolio-buttons">
         <button
@@ -170,7 +172,8 @@ const Portfolio = () => {
                 key={idx}
                 onClick={() => setExpandedProject(expandedProject === idx ? null : idx)}
               >
-                <h3 className="project-title">{proj.name}</h3>
+                <h3 className="project-title">{proj.name }<img src={pr} alt="" className='pr'/></h3>
+                
                 {expandedProject === idx && (
                   <>
                     {Array.isArray(proj.description) ? (
@@ -185,6 +188,7 @@ const Portfolio = () => {
                     {proj.image && <img src={proj.image} alt={proj.name} className="project-image" />}
                     {proj.github && (
                       <a href={proj.github} target="_blank" rel="noopener noreferrer">
+                        
                         <br />
                         View on GitHub
                       </a>
