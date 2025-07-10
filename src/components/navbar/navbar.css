@@ -1,0 +1,107 @@
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.navbar{
+    height: 5rem;
+    width: 100vw;
+    max-width: 100rem;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    will-change: transform;
+    backface-visibility: hidden;
+    background-color: #262150;
+}
+.menulist {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;  
+    transition: color 0.3s ease;
+}
+.menulist:hover{
+    color: lightsalmon;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid;
+}
+.menubtn{
+    margin: 1rem;
+    cursor: pointer;
+    background: #aa3def;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    padding: 0 2rem;
+   
+}
+.menubtnimg{
+    object-fit: cover;
+    
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    gap: 2rem;               
+    margin-top: 0;         
+}
+.cont{
+  font-size: 1.2rem;
+  color: black;
+}
+
+
+
+@media screen and (max-width: 840px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 1rem;
+  }
+
+  .menu.active {
+  display: flex;
+  background-color: yellowgreen; 
+  position: absolute;
+  top: 5rem; 
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  }
+
+  .menulist {
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .menubtn {
+    display: none;
+  }
+}

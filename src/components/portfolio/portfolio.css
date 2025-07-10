@@ -1,0 +1,209 @@
+.portfolio-section {
+  min-height: 100vh;
+  padding: 100px 2rem 4rem 2rem;
+  text-align: center;
+}
+
+.portfolio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.8rem 1.8rem;
+  border: 2px solid #00bfa6;
+  background-color: transparent;
+  color: #00bfa6;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #00bfa6;
+  color: black;
+}
+
+.portfolio-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill-meter {
+  text-align: center;
+}
+
+.track {
+  stroke: #ddd;
+  stroke-width: 15;
+  stroke-linecap: round;
+}
+
+.progress {
+  stroke: yellowgreen;
+  stroke-width: 15;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.label {
+  margin-top: -1rem;
+  color: white;
+}
+
+.internship-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-box {
+  border: 2px solid orange;
+  color: orange;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 20px;
+  background-color: orange;
+  margin-bottom: 10px;
+}
+
+.horizontal-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.horizontal-box {
+  border: 2px solid orange;
+  color: orange;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.horizontal-box:hover {
+  color: #90ee90;
+  border-color: #90ee90;
+}
+
+.horizontal-connector {
+  width: 30px;
+  height: 2px;
+  background-color: orange;
+  margin: 0 10px;
+  margin-top: 2.5rem;
+}
+
+.internship-details-box {
+  background-color: transparent;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: white;
+  text-align: left;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.internship-details-box ul {
+  padding-left: 1.5rem;
+}
+
+.intern {
+  font-size: 3rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.port {
+  font-size: 4rem;
+  color: purple;
+  margin-bottom: 3rem;
+}
+
+.projects-section {
+  margin-top: 2rem;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15rem);
+  -webkit-backdrop-filter: blur(15rem);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 80%;
+  color: yellowgreen;
+  text-align: left;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.project-card h3 {
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card a {
+  color: yellowgreen;
+  text-decoration: underline;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.animate-in {
+  opacity: 0;
+  transform: translateY(-40px) scale(0.8);
+  transition: all 0.6s ease-out;
+}
+
+.animate-in.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

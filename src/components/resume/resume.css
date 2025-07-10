@@ -1,0 +1,63 @@
+.resume-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: transparent;
+}
+
+
+
+.download-btn-container {
+  margin: 1rem 0;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005fcb;
+}
+
+.resume-viewer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-iframe {
+  width: 80%;
+  height: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  
+}
+.resume-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fddbb0;
+  font-weight: bold;
+  opacity: 0; /* Start hidden */
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide-in {
+  animation: fadeSlideIn 0.8s ease forwards;
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+
+}
+body{
+    /*background: rgb(30, 30, 30);
+    color: white;
+    overflow: hidden;
+    overflow-y: scroll;*/
+  margin: 0;
+  padding: 0;
+  background-image: url('/6032628.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+
+}
