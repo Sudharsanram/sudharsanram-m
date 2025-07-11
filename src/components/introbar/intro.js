@@ -7,17 +7,11 @@ const roles = ["FULL STACK DEVELOPER", "DEVELOPER"];
 const Intro = () => {
   const imgRef = useRef(null);
 
-  /* ───────────────────────────────
-     Typewriter state
-  ─────────────────────────────── */
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
-  /* ───────────────────────────────
-     3‑D hover effect – only on the image
-  ─────────────────────────────── */
   useEffect(() => {
     const img = imgRef.current;
     if (!img) return;
@@ -27,7 +21,6 @@ const Intro = () => {
       const x = e.clientX - (left + width / 2);
       const y = e.clientY - (top + height / 2);
 
-      // Subtle rotation (divide by 20 to keep it gentle)
       const rotateX = (-y / 20).toFixed(2);
       const rotateY = (x / 20).toFixed(2);
 
@@ -47,9 +40,6 @@ const Intro = () => {
     };
   }, []);
 
-  /* ───────────────────────────────
-     Typewriter effect
-  ─────────────────────────────── */
   useEffect(() => {
     if (subIndex === roles[index].length + 1 && !deleting) {
       setTimeout(() => setDeleting(true), 1000);
@@ -70,8 +60,6 @@ const Intro = () => {
     return () => clearTimeout(timeout);
   }, [subIndex, index, deleting]);
 
-  /* ─────────────────────────────── */
-
   return (
     <section id="home" className="intro-section">
       <div className="intro-left">
@@ -79,15 +67,13 @@ const Intro = () => {
           <span className="txt">
             Hello,
             <br />
-            <span className="ptxt">I&apos;m</span>
+            <span className="ptxt">I'm</span>
           </span>
           <span className="name">
-            {" "}
             Sudharsan Ram M
             <br />
           </span>
         </span>
-
         <span className="typewriter-text">
           {text}
           <span className="cursor">|</span>

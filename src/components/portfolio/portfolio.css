@@ -244,6 +244,11 @@ margin-left: 1rem;
   width: 3rem;
   height: 3rem;
 }
+.certificate-tab-wrapper {
+  width: 100%;
+  margin-top: 2rem;
+}
+
 
 /* 🔽 Responsive Optimization */
 @media screen and (max-width: 840px) {

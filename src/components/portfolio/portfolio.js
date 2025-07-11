@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './portfolio.css';
+
 import proj1 from '../../assert/proj.png';
-import darraow from "../../assert/icons8-down-button.gif"
-import larrow from "../../assert/icons8-next-page.gif"
-import pr from "../../assert/icons8-project.gif"
-import pro from "../../assert/icons8-blog.gif"
+import darraow from "../../assert/icons8-down-button.gif";
+import larrow from "../../assert/icons8-next-page.gif";
+import pr from "../../assert/icons8-project.gif";
+import pro from "../../assert/icons8-blog.gif";
+
+import Certificate from '../certificate/certificate'; // 🔄 New Import
 
 const SkillMeter = ({ skill, percent, animate }) => {
   const radius = 70;
@@ -35,8 +38,6 @@ const Portfolio = () => {
   const portfolioRef = useRef();
   const titleRef = useRef();
   const [inView, setInView] = useState(false);
-  const [showCompany, setShowCompany] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
   const [activeTab, setActiveTab] = useState('skills');
   const [expandedProject, setExpandedProject] = useState(null);
 
@@ -87,7 +88,9 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" ref={portfolioRef} className="portfolio-section">
-      <h1 className="port animate-in" ref={titleRef}>PORTFOLIO <img src={pro} alt="" className='pro' /></h1>
+      <h1 className="port animate-in" ref={titleRef}>
+        PORTFOLIO <img src={pro} alt="" className='pro' />
+      </h1>
 
       <div className="portfolio-buttons">
         <button
@@ -100,7 +103,7 @@ const Portfolio = () => {
           className={activeTab === 'internship' ? 'tab-btn active' : 'tab-btn'}
           onClick={() => setActiveTab('internship')}
         >
-          Internship
+          Certificates
         </button>
         <button
           className={activeTab === 'projects' ? 'tab-btn active' : 'tab-btn'}
@@ -129,36 +132,8 @@ const Portfolio = () => {
       )}
 
       {activeTab === 'internship' && (
-        <div className="internship-section">
-          <h1 className="intern">INTERNSHIP</h1>
-          <div className="vertical-box" onClick={() => setShowCompany(!showCompany)}>
-            Internship Experience <img src={darraow} alt="" className="darr" />
-          </div>
-          {showCompany && (
-            <>
-              <div className="vertical-line" />
-              <div className="horizontal-flow">
-                <div className="horizontal-box" onClick={() => setShowDetails(!showDetails)}>
-                  Connect Infosystem  <img src={larrow} alt="" className='larr'/> 
-                </div>
-               {showDetails && (
-                  <>
-                    <div className="horizontal-connector" />
-                    <div className="internship-details-box">
-                      <h4>Web Designing and Development</h4>
-                      <p>Duration: June 2024 – July 2024</p>
-                      <ul>
-                        <li>Developed a full-featured e-commerce site for computer accessories.</li>
-                        <li>Designed responsive and intuitive UI/UX for easy navigation.</li>
-                        <li>Built using HTML, CSS, and JavaScript for a scalable solution.</li>
-                        <li>Performed testing and debugging for cross-browser compatibility.</li>
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </div>
-            </>
-          )}
+        <div className="certificate-tab-wrapper">
+          <Certificate />
         </div>
       )}
 
@@ -172,8 +147,11 @@ const Portfolio = () => {
                 key={idx}
                 onClick={() => setExpandedProject(expandedProject === idx ? null : idx)}
               >
-                <h3 className="project-title">{proj.name }<img src={pr} alt="" className='pr'/></h3>
-                
+                <h3 className="project-title">
+                  {proj.name}
+                  <img src={pr} alt="" className='pr' />
+                </h3>
+
                 {expandedProject === idx && (
                   <>
                     {Array.isArray(proj.description) ? (
@@ -185,10 +163,11 @@ const Portfolio = () => {
                     ) : (
                       <p>{proj.description}</p>
                     )}
-                    {proj.image && <img src={proj.image} alt={proj.name} className="project-image" />}
+                    {proj.image && (
+                      <img src={proj.image} alt={proj.name} className="project-image" />
+                    )}
                     {proj.github && (
                       <a href={proj.github} target="_blank" rel="noopener noreferrer">
-                        
                         <br />
                         View on GitHub
                       </a>

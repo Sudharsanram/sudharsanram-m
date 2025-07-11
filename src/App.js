@@ -7,6 +7,7 @@ import Portfolio from "./components/portfolio/portfolio";
 import Resume from "./components/resume/resume";
 import './global.css';
 import Certificate from "./components/certificate/certificate";
+import Internship from "./components/internship/internship";
 
 function App() {
   const [showResume, setShowResume] = useState(false);
@@ -31,7 +32,7 @@ function App() {
       <Intro />
       <About />
       <Portfolio />
-      <Certificate/>
+      <Internship/>
       {showResume && <Resume ref={resumeRef} />}
       <Cont />
     </div>
