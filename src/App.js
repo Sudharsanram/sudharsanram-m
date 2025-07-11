@@ -6,6 +6,7 @@ import About from "./components/about/about";
 import Portfolio from "./components/portfolio/portfolio";
 import Resume from "./components/resume/resume";
 import './global.css';
+import Certificate from "./components/certificate/certificate";
 
 function App() {
   const [showResume, setShowResume] = useState(false);
@@ -30,9 +31,8 @@ function App() {
       <Intro />
       <About />
       <Portfolio />
-
+      <Certificate/>
       {showResume && <Resume ref={resumeRef} />}
-
       <Cont />
     </div>
   );

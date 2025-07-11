@@ -64,7 +64,7 @@ form {
   position: absolute;
   top: -0.7rem;
   left: 1rem;
-  background-color: #100c2a;
+  background-color: #262051;
   padding: 0 0.5rem;
   font-weight: bold;
   font-size: 0.9rem;
@@ -74,7 +74,7 @@ form {
 
 input,
 textarea {
-  background: white;
+  background: #262051;
   border: 3px solid #fddbb0;
   border-radius: 20px;
   padding: 1.2rem 1rem 1rem;
@@ -126,6 +126,15 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: 5rem;
+  margin-top: 3.5rem;
+}
+.icon-text1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 5rem;
+  margin-top: 1rem;
 }
 
 .icon-circle {
@@ -138,6 +147,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  
 }
 
 .icon-circle img {

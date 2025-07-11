@@ -89,7 +89,7 @@ const Cont = () => {
               <span>sudharsanram.m@gmail.com</span>
             </div>
 
-            <div className="icon-text">
+            <div className="icon-text1">
               <div className="icon-circle">
                 <img src={FaPhone} alt="Phone" />
               </div>
