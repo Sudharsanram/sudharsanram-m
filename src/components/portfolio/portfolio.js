@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import './portfolio.css';
 
 import proj1 from '../../assert/proj.png';
-import darraow from "../../assert/icons8-down-button.gif";
-import larrow from "../../assert/icons8-next-page.gif";
-import pr from "../../assert/icons8-project.gif";
-import pro from "../../assert/icons8-blog.gif";
+import pr from '../../assert/icons8-project.gif';
+import pro from '../../assert/icons8-blog.gif';
 
-import Certificate from '../certificate/certificate'; // 🔄 New Import
+import Certificate from '../certificate/certificate';
 
 const SkillMeter = ({ skill, percent, animate }) => {
   const radius = 70;
@@ -39,7 +37,6 @@ const Portfolio = () => {
   const titleRef = useRef();
   const [inView, setInView] = useState(false);
   const [activeTab, setActiveTab] = useState('skills');
-  const [expandedProject, setExpandedProject] = useState(null);
 
   const projects = [
     {
@@ -51,11 +48,9 @@ const Portfolio = () => {
     },
     {
       name: 'Smart Barricade System using STM32',
-      description: [
-        'Designed a road safety system using STM32 and GPS to detect hazardous zones.',
-        'Provided real-time alerts via LEDs, buzzer, and app integration for incoming vehicles.',
-        'Integrated Google Maps API to display barricade locations in the app.'
-      ]
+      description: 'Designed a road safety system using STM32 and GPS to detect hazardous zones. Provided real-time alerts via LEDs, buzzer, and app integration for incoming vehicles. Integrated Google Maps API to display barricade locations in the app.',
+      image: null,
+      github: null,
     }
   ];
 
@@ -140,40 +135,33 @@ const Portfolio = () => {
       {activeTab === 'projects' && (
         <div className="projects-section">
           <h2 className="portfolio-title">PROJECTS</h2>
-          <div className="projects-list">
-            {projects.map((proj, idx) => (
+          <div className="projects-list-flip">
+            {projects.map((proj, index) => (
               <div
-                className="project-card"
-                key={idx}
-                onClick={() => setExpandedProject(expandedProject === idx ? null : idx)}
+                className={`project-flip-card ${proj.name.includes('Melanoma') ? 'melanoma-bg' : ''}`}
+                key={index}
               >
-                <h3 className="project-title">
-                  {proj.name}
-                  <img src={pr} alt="" className='pr' />
-                </h3>
-
-                {expandedProject === idx && (
-                  <>
-                    {Array.isArray(proj.description) ? (
-                      <ul>
-                        {proj.description.map((point, i) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p>{proj.description}</p>
-                    )}
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <h3>{proj.name}</h3>
+                    <img src={pr} alt="project-icon" />
+                  </div>
+                  <div className="flip-card-back">
+                    <p>{proj.description}</p>
                     {proj.image && (
-                      <img src={proj.image} alt={proj.name} className="project-image" />
+                      <img
+                        src={proj.image}
+                        alt="project"
+                        style={{ width: "100%", marginTop: "1rem", borderRadius: "10px" }}
+                      />
                     )}
                     {proj.github && (
                       <a href={proj.github} target="_blank" rel="noopener noreferrer">
-                        <br />
                         View on GitHub
                       </a>
                     )}
-                  </>
-                )}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
