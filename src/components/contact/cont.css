@@ -114,28 +114,34 @@ button:hover {
   height: 20px;
 }
 
-/* Right Section */
+/* ✅ Right Side Styling */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contact-animation {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.icon-text {
-  display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-left: 5rem;
-  margin-top: 3.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
+.icon-text,
 .icon-text1 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 5rem;
-  margin-top: 1rem;
+  margin: 0;
 }
 
 .icon-circle {
@@ -158,6 +164,12 @@ button:hover {
 .icon-circle:hover {
   box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
   transform: scale(1.1);
+}
+
+.icon-text span,
+.icon-text1 span {
+  font-size: 1rem;
+  color: #fddbb0;
 }
 
 /* ✅ Responsive Design */
@@ -194,10 +206,14 @@ button:hover {
     padding: 0.6rem 1.2rem;
   }
 
+  .contact-animation {
+    width: 250px;
+  }
+
   .contact-info {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
   }
 
   .icon-text,

@@ -4,6 +4,8 @@ import emailjs from "emailjs-com";
 import FaPaperPlane from "../../assert/icons8-paper-plane-50.png";
 import FaEnvelope from "../../assert/icons8-gmail-50.png";
 import FaPhone from "../../assert/icons8-call-50.png";
+import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from "../../assert/contactani.json";
 
 const Cont = () => {
   const form = useRef();
@@ -11,44 +13,30 @@ const Cont = () => {
 
   useEffect(() => {
     const target = headingRef.current;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
+        entry.isIntersecting
+          ? entry.target.classList.add("show")
+          : entry.target.classList.remove("show");
       },
       { threshold: 0.6 }
     );
 
     if (target) observer.observe(target);
-
-    return () => {
-      if (target) observer.unobserve(target);
-    };
+    return () => target && observer.unobserve(target);
   }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
-      .sendForm(
-        "service_15c14ij",
-        "template_259cnff",
-        form.current,
-        "HFZv1otMS-XUuhiqE"
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          e.target.reset();
-        },
-        () => {
-          alert("Failed to send message, try again!");
-        }
-      );
+      .sendForm("service_15c14ij", "template_259cnff", form.current, "HFZv1otMS-XUuhiqE")
+      .then(() => {
+        alert("Message sent successfully!");
+        e.target.reset();
+      })
+      .catch(() => {
+        alert("Failed to send message, try again!");
+      });
   };
 
   return (
@@ -79,6 +67,8 @@ const Cont = () => {
         </div>
 
         <div className="contact-right">
+          <Player autoplay loop src={animationData} className="contact-animation" />
+          
           <div className="contact-info">
             <div className="icon-text">
               <div className="icon-circle">

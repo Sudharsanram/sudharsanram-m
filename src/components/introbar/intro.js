@@ -67,7 +67,7 @@ const Intro = () => {
           <span className="txt">
             Hello,
             <br />
-            <span className="ptxt">I'm</span>
+            <span className="ptxt">I'm<br /></span>
           </span>
           <span className="name">
             Sudharsan Ram M
