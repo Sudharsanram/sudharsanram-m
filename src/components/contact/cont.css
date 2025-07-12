@@ -26,6 +26,7 @@ body {
   color: #fddbb0;
 }
 
+/* 🎯 Animate on scroll */
 .animate-in {
   opacity: 0;
   transform: translateY(-40px) scale(0.8);
@@ -121,8 +122,7 @@ button:hover {
   margin-top: 3rem;
 }
 
-.icon-text,
-.icon-text1 {
+.icon-text {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -131,6 +131,10 @@ button:hover {
 }
 
 .icon-text1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 5rem;
   margin-top: 1rem;
 }
 
@@ -156,7 +160,7 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* ✅ Tablet and below */
+/* ✅ Responsive Design */
 @media screen and (max-width: 840px) {
   .contact-container {
     flex-direction: column;
@@ -191,59 +195,33 @@ button:hover {
   }
 
   .contact-info {
+    flex-direction: column;
     align-items: center;
+    gap: 2rem;
   }
 
   .icon-text,
   .icon-text1 {
     flex-direction: column;
-    text-align: center;
-    margin: 2rem 0 0 0;
+    align-items: center;
+    margin: 0;
   }
 
   .icon-circle {
-    width: 40px;
-    height: 40px;
+    margin-bottom: 0.5rem;
+    width: 45px;
+    height: 45px;
   }
 
   .icon-circle img {
     width: 24px;
     height: 24px;
   }
-}
 
-/* ✅ Mobile optimization (≤ 480px) */
-@media screen and (max-width: 480px) {
-  .contact-container {
-    padding: 2rem 1rem;
-  }
-
-  .contact-left h1 {
-    font-size: 1.7rem;
-  }
-
-  input,
-  textarea {
-    font-size: 0.9rem;
-    padding: 0.9rem;
-  }
-
-  .input-container label {
-    font-size: 0.8rem;
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .icon-circle {
-    width: 35px;
-    height: 35px;
-  }
-
-  .icon-circle img {
-    width: 20px;
-    height: 20px;
+  .icon-text span,
+  .icon-text1 span {
+    font-size: 1rem;
+    color: #fddbb0;
+    text-align: center;
   }
 }
