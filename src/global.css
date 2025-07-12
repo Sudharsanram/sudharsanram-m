@@ -16,6 +16,9 @@ body {
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
 }
+section {
+  scroll-margin-top: 6rem; /* accounts for fixed navbar height */
+}
 
 
 
