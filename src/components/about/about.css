@@ -1,5 +1,6 @@
 * {
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 .about-section {
@@ -42,7 +43,8 @@
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
-.mail,.linkedin, .github {
+
+.mail, .linkedin, .github {
   height: 2.5rem;
   width: 2.5rem;
   margin-left: 2rem;
@@ -57,8 +59,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-
-
 .mail:hover, .linkedin:hover, .github:hover {
   box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
   transform: scale(1.1);
@@ -68,11 +68,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem; 
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
-/* 🔽 Responsive Design for screens ≤ 840px */
+/* 🔽 Responsive for tablets and below (≤ 840px) */
 @media screen and (max-width: 840px) {
   .about-section {
     margin: 2rem 1rem;
@@ -94,5 +95,36 @@
     height: 1.8rem;
     width: 1.8rem;
     margin-left: 1rem;
+  }
+}
+
+/* 🔽 Additional mobile optimization (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .about-section {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .head {
+    font-size: 1.7rem;
+  }
+
+  .text1 {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .mail, .linkedin, .github {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 0.6rem;
+  }
+
+  .social-icons {
+    flex-direction: row;
+    gap: 0.6rem;
+    flex-wrap: wrap;
   }
 }
