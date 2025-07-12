@@ -1,17 +1,24 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Navbar from "./components/navbar/navbar";
 import Intro from "./components/introbar/intro";
 import Cont from "./components/contact/cont";
 import About from "./components/about/about";
 import Portfolio from "./components/portfolio/portfolio";
 import Resume from "./components/resume/resume";
-import './global.css';
-import Certificate from "./components/certificate/certificate";
 import Internship from "./components/internship/internship";
 
+import './global.css';
+import Loader from "./components/loading/loading";
+
 function App() {
+  const [loading, setLoading] = useState(true); // 🆕 For loading screen
   const [showResume, setShowResume] = useState(false);
   const resumeRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // 🆕 Simulated loading
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleResumeClick = () => {
     setShowResume((prev) => {
@@ -25,14 +32,18 @@ function App() {
     });
   };
 
+  // 🆕 Show loader before rendering the actual portfolio
+  if (loading) {
+    return <Loader/>;
+  }
+
   return (
     <div className="App">
       <Navbar onResumeClick={handleResumeClick} />
-
       <Intro />
       <About />
       <Portfolio />
-      <Internship/>
+      <Internship />
       {showResume && <Resume ref={resumeRef} />}
       <Cont />
     </div>
