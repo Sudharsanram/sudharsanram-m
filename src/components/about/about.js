@@ -6,6 +6,7 @@ import mail from "../../assert/icons8-gmail-50.png";
 import linkedin from "../../assert/icons8-linkedin.gif";
 import git from "../../assert/icons8-github-30.png";
 import ser from "../../assert/icons8-analyze.gif";
+import leet from '../../assert/icons8-leetcode-24.png'
 import Lottie from "lottie-react"; // make sure you installed lottie-react
 import animationData from "../../assert/about.json"; // adjust path
 
@@ -51,6 +52,9 @@ const About = () => {
             </a>
             <a href="https://www.linkedin.com/in/sudharsan-ram-m/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" className='linkedin' />
+            </a>
+            <a href="https://leetcode.com/u/IzwIztHk36/" target="_blank" rel="noopener noreferrer">
+              <img src={leet} alt="LeetCode" className='leet' />
             </a>
           </div>
         </div>

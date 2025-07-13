@@ -72,7 +72,7 @@
 }
 
 /* ------------------ Social Icons ------------------ */
-.mail, .linkedin, .github {
+.mail, .linkedin, .github, .leet {
   height: 2.5rem;
   width: 2.5rem;
   margin-left: 2rem;
@@ -87,7 +87,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.mail:hover, .linkedin:hover, .github:hover {
+.mail:hover, .linkedin:hover, .github:hover, .leet:hover {
   box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
   transform: scale(1.1);
 }
@@ -134,7 +134,7 @@
     line-height: 1.5;
   }
 
-  .mail, .linkedin, .github {
+  .mail, .linkedin, .github, .leet {
     height: 1.8rem;
     width: 1.8rem;
     margin-left: 1rem;
@@ -163,7 +163,7 @@
     margin-bottom: 1rem;
   }
 
-  .mail, .linkedin, .github {
+  .mail, .linkedin, .github,.leet {
     height: 1.5rem;
     width: 1.5rem;
     margin-left: 0.6rem;
