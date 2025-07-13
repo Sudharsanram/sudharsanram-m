@@ -7,6 +7,9 @@ import pro from '../../assert/icons8-blog.gif';
 
 import Certificate from '../certificate/certificate';
 
+import Lottie from 'lottie-react';
+import animationData from '../../assert/Man Working on Laptop in Office.json';
+
 const SkillMeter = ({ skill, percent, animate }) => {
   const radius = 70;
   const circumference = Math.PI * radius;
@@ -48,10 +51,11 @@ const Portfolio = () => {
     },
     {
       name: 'Smart Barricade System using STM32',
-      description: 'Designed a road safety system using STM32 and GPS to detect hazardous zones. Provided real-time alerts via LEDs, buzzer, and app integration for incoming vehicles. Integrated Google Maps API to display barricade locations in the app.',
-      image: null,
+      description:
+        'Designed a road safety system using STM32 and GPS to detect hazardous zones. Provided real-time alerts via LEDs, buzzer, and app integration for incoming vehicles. Integrated Google Maps API to display barricade locations in the app.',
       github: null,
-    }
+      image: null,
+    },
   ];
 
   useEffect(() => {
@@ -61,18 +65,16 @@ const Portfolio = () => {
       { threshold: 0.3 }
     );
     if (target) observer.observe(target);
-    return () => {
-      if (target) observer.unobserve(target);
-    };
+    return () => target && observer.unobserve(target);
   }, []);
 
   useEffect(() => {
     const headingObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          entry.target.classList.add('show');
         } else {
-          entry.target.classList.remove("show");
+          entry.target.classList.remove('show');
         }
       },
       { threshold: 0.6 }
@@ -83,90 +85,104 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" ref={portfolioRef} className="portfolio-section">
-      <h1 className="port animate-in" ref={titleRef}>
-        PORTFOLIO <img src={pro} alt="" className='pro' />
-      </h1>
-
-      <div className="portfolio-buttons">
-        <button
-          className={activeTab === 'skills' ? 'tab-btn active' : 'tab-btn'}
-          onClick={() => setActiveTab('skills')}
-        >
-          Technical Skills
-        </button>
-        <button
-          className={activeTab === 'internship' ? 'tab-btn active' : 'tab-btn'}
-          onClick={() => setActiveTab('internship')}
-        >
-          Certificates
-        </button>
-        <button
-          className={activeTab === 'projects' ? 'tab-btn active' : 'tab-btn'}
-          onClick={() => setActiveTab('projects')}
-        >
-          Projects
-        </button>
-      </div>
-
-      {activeTab === 'skills' && (
-        <>
-          <h2 className="portfolio-title">TECHNICAL SKILLS</h2>
-          <div className="skill-list">
-            <div className="skill-row">
-              <SkillMeter skill="JAVA" percent={85} animate={inView} />
-              <SkillMeter skill="C" percent={80} animate={inView} />
-              <SkillMeter skill="Python" percent={85} animate={inView} />
-              <SkillMeter skill="JavaScript" percent={75} animate={inView} />
-            </div>
-            <div className="skill-row">
-              <SkillMeter skill="ReactJS" percent={70} animate={inView} />
-              <SkillMeter skill="HTML/CSS" percent={90} animate={inView} />
-            </div>
+      <h1 className="section-title">PORTFOLIO</h1>
+      <div className="portfolio-container">
+        {/* LEFT: Portfolio Content */}
+        <div className="portfolio-content">
+          <div className="portfolio-heading">
+            <h1 className="port animate-in" ref={titleRef}>
+              PORTFOLIO
+            </h1>
+            <img src={pro} alt="Portfolio Icon" className="pro" />
           </div>
-        </>
-      )}
 
-      {activeTab === 'internship' && (
-        <div className="certificate-tab-wrapper">
-          <Certificate />
-        </div>
-      )}
+          <div className="portfolio-buttons">
+            <button
+              className={activeTab === 'skills' ? 'tab-btn active' : 'tab-btn'}
+              onClick={() => setActiveTab('skills')}
+            >
+              Technical Skills
+            </button>
+            <button
+              className={activeTab === 'internship' ? 'tab-btn active' : 'tab-btn'}
+              onClick={() => setActiveTab('internship')}
+            >
+              Certificates
+            </button>
+            <button
+              className={activeTab === 'projects' ? 'tab-btn active' : 'tab-btn'}
+              onClick={() => setActiveTab('projects')}
+            >
+              Projects
+            </button>
+          </div>
 
-      {activeTab === 'projects' && (
-        <div className="projects-section">
-          <h2 className="portfolio-title">PROJECTS</h2>
-          <div className="projects-list-flip">
-            {projects.map((proj, index) => (
-              <div
-                className={`project-flip-card ${proj.name.includes('Melanoma') ? 'melanoma-bg' : ''}`}
-                key={index}
-              >
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <h3>{proj.name}</h3>
-                    <img src={pr} alt="project-icon" />
-                  </div>
-                  <div className="flip-card-back">
-                    <p>{proj.description}</p>
-                    {proj.image && (
-                      <img
-                        src={proj.image}
-                        alt="project"
-                        style={{ width: "100%", marginTop: "1rem", borderRadius: "10px" }}
-                      />
-                    )}
-                    {proj.github && (
-                      <a href={proj.github} target="_blank" rel="noopener noreferrer">
-                        View on GitHub
-                      </a>
-                    )}
-                  </div>
+          {activeTab === 'skills' && (
+            <>
+              <h2 className="portfolio-title">TECHNICAL SKILLS</h2>
+              <div className="skill-list">
+                <div className="skill-row">
+                  <SkillMeter skill="JAVA" percent={85} animate={inView} />
+                  <SkillMeter skill="C" percent={80} animate={inView} />
+                  <SkillMeter skill="Python" percent={85} animate={inView} />
+                  <SkillMeter skill="JavaScript" percent={75} animate={inView} />
+                </div>
+                <div className="skill-row">
+                  <SkillMeter skill="ReactJS" percent={70} animate={inView} />
+                  <SkillMeter skill="HTML/CSS" percent={90} animate={inView} />
                 </div>
               </div>
-            ))}
-          </div>
+            </>
+          )}
+
+          {activeTab === 'internship' && (
+            <div className="certificate-tab-wrapper">
+              <Certificate />
+            </div>
+          )}
+
+          {activeTab === 'projects' && (
+            <div className="projects-section">
+              <h2 className="portfolio-title">PROJECTS</h2>
+              <div className="projects-list-flip">
+                {projects.map((proj, index) => (
+                  <div
+                    className={`project-flip-card ${proj.name.includes('Melanoma') ? 'melanoma-bg' : ''}`}
+                    key={index}
+                  >
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front">
+                        <h3>{proj.name}</h3>
+                        <img src={pr} alt="project-icon" />
+                      </div>
+                      <div className="flip-card-back">
+                        <p>{proj.description}</p>
+                        {proj.image && (
+                          <img
+                            src={proj.image}
+                            alt="project"
+                            style={{ width: '100%', marginTop: '1rem', borderRadius: '10px' }}
+                          />
+                        )}
+                        {proj.github && (
+                          <a href={proj.github} target="_blank" rel="noopener noreferrer">
+                            View on GitHub
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      )}
+
+        {/* RIGHT: JSON Animation */}
+        <div className="portfolio-animation">
+          <Lottie animationData={animationData} loop={true} />
+        </div>
+      </div>
     </section>
   );
 };
