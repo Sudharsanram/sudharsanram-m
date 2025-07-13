@@ -85,7 +85,7 @@ const Certificate = () => {
 
   return (
     <section className="certificate-section" id="certificates">
-      <h2 className="cert-heading">My Certificates</h2>
+      <h2 className="cert-heading">MY CERTIFICATES</h2>
       <div className="certificate-container">
         {certificatesToShow.map((cert) => (
           <div className="certificate-card" key={cert.id}>

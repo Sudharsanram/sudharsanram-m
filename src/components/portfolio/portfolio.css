@@ -22,9 +22,15 @@
   flex: 1;
   min-width: 250px;
   max-width: 400px;
-  margin-top: 18rem;
+  margin-top: 21rem; /* adjust as needed */
 }
 
+.portfolio-animation svg {
+  width: 100%;
+  height: auto;
+}
+
+/* === Portfolio Heading === */
 .portfolio-heading {
   display: flex;
   justify-content: center;
@@ -36,7 +42,7 @@
   font-size: 4rem;
   color: #00FFFF;
   margin-bottom: 2rem;
-  margin-left: 31rem;
+  margin-left: 31rem; /* desktop offset if needed */
 }
 
 .pro {
@@ -45,6 +51,12 @@
   margin-bottom: 2rem;
 }
 
+/* === Remove Duplicate Section Title === */
+.section-title {
+  display: none; /* fully hidden now! */
+}
+
+/* === Tabs === */
 .portfolio-buttons {
   display: flex;
   justify-content: center;
@@ -70,12 +82,15 @@
   color: black;
 }
 
+/* === Section Titles === */
 .portfolio-title {
+  margin-top: 5rem;
   font-size: 3rem;
   margin-bottom: 2rem;
   color: #C084FC;
 }
 
+/* === Skills === */
 .skill-list {
   display: flex;
   flex-direction: column;
@@ -109,14 +124,22 @@
 
 .label {
   margin-top: -1rem;
-  color: #FFFFFF;
+  color: white;
 }
 
+.label h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+/* === Certificates === */
 .certificate-tab-wrapper {
   width: 100%;
   margin-top: 2rem;
 }
 
+/* === Projects Flip Cards === */
 .projects-section {
   margin-top: 2rem;
 }
@@ -187,6 +210,7 @@
   text-decoration: underline;
 }
 
+/* === Melanoma Project Custom Colors === */
 .melanoma-bg .flip-card-front,
 .melanoma-bg .flip-card-back {
   background: linear-gradient(135deg, #1e2b3a, #264653);
@@ -198,6 +222,7 @@
   color: #ff9f1c;
 }
 
+/* === Animation In === */
 .animate-in {
   opacity: 0;
   transform: translateY(-40px) scale(0.8);
@@ -209,7 +234,7 @@
   transform: translateY(0) scale(1);
 }
 
-/* Responsive */
+/* === Responsive === */
 @media screen and (max-width: 840px) {
   .portfolio-container {
     flex-direction: column;
@@ -225,8 +250,12 @@
     width: 100%;
   }
 
-  .portfolio-title,
   .port {
+    font-size: 2rem; /* smaller on mobile */
+    margin-left: 0; /* remove desktop offset */
+  }
+
+  .portfolio-title {
     font-size: 2rem;
   }
 

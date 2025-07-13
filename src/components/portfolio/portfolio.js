@@ -88,6 +88,7 @@ const Portfolio = () => {
       <div className="portfolio-container">
         {/* LEFT: Portfolio Content */}
         <div className="portfolio-content">
+          {/* Single Heading — visible on all devices */}
           <div className="portfolio-heading">
             <h1 className="port animate-in" ref={titleRef}>
               PORTFOLIO
