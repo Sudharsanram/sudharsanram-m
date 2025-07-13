@@ -85,7 +85,6 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" ref={portfolioRef} className="portfolio-section">
-      <h1 className="section-title">PORTFOLIO</h1>
       <div className="portfolio-container">
         {/* LEFT: Portfolio Content */}
         <div className="portfolio-content">

@@ -5,35 +5,26 @@
   text-align: center;
 }
 
-/* === Flex Container: Content left, Animation right === */
 .portfolio-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Keep top-aligned for all tabs */
+  align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
 }
 
-/* === Left Side: Portfolio Content === */
 .portfolio-content {
   flex: 2;
   min-width: 300px;
 }
 
-/* === Right Side: JSON Animation === */
 .portfolio-animation {
   flex: 1;
   min-width: 250px;
   max-width: 400px;
-  margin-top: 18rem; /* <-- Static vertical position so it stays same for all tabs */
+  margin-top: 18rem;
 }
 
-.portfolio-animation svg {
-  width: 100%;
-  height: auto;
-}
-
-/* === Portfolio Heading === */
 .portfolio-heading {
   display: flex;
   justify-content: center;
@@ -45,7 +36,7 @@
   font-size: 4rem;
   color: #00FFFF;
   margin-bottom: 2rem;
-  margin-left: 30rem; /* adjust if needed */
+  margin-left: 31rem;
 }
 
 .pro {
@@ -54,7 +45,6 @@
   margin-bottom: 2rem;
 }
 
-/* === Tabs === */
 .portfolio-buttons {
   display: flex;
   justify-content: center;
@@ -80,11 +70,10 @@
   color: black;
 }
 
-/* === Skills === */
 .portfolio-title {
   font-size: 3rem;
   margin-bottom: 2rem;
-  color: #C084FC; /* lavender for clear contrast */
+  color: #C084FC;
 }
 
 .skill-list {
@@ -123,13 +112,11 @@
   color: #FFFFFF;
 }
 
-/* === Certificates === */
 .certificate-tab-wrapper {
   width: 100%;
   margin-top: 2rem;
 }
 
-/* === Projects Flip Cards === */
 .projects-section {
   margin-top: 2rem;
 }
@@ -200,7 +187,6 @@
   text-decoration: underline;
 }
 
-/* === Melanoma Project Custom Colors === */
 .melanoma-bg .flip-card-front,
 .melanoma-bg .flip-card-back {
   background: linear-gradient(135deg, #1e2b3a, #264653);
@@ -212,7 +198,6 @@
   color: #ff9f1c;
 }
 
-/* === Animate In === */
 .animate-in {
   opacity: 0;
   transform: translateY(-40px) scale(0.8);
@@ -224,12 +209,7 @@
   transform: translateY(0) scale(1);
 }
 
-/* === Hide Section Title === */
-.section-title {
-  display: none;
-}
-
-/* === Responsive === */
+/* Responsive */
 @media screen and (max-width: 840px) {
   .portfolio-container {
     flex-direction: column;
@@ -238,7 +218,7 @@
   }
 
   .portfolio-animation {
-    margin-top: 2rem; /* less offset on mobile */
+    margin-top: 2rem;
   }
 
   .portfolio-content {
