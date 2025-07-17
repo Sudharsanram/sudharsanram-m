@@ -1,52 +1,81 @@
-import React, { useState, useRef, useEffect } from "react";
+// App.js
+import React, { useState, useEffect, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
 import Intro from "./components/introbar/intro";
 import Cont from "./components/contact/cont";
 import About from "./components/about/about";
 import Portfolio from "./components/portfolio/portfolio";
-import Resume from "./components/resume/resume";
 import Internship from "./components/internship/internship";
-
-import './global.css';
+import FullPage from "./components/fullpage/fullpage";
 import Loader from "./components/loading/loading";
 
-function App() {
-  const [loading, setLoading] = useState(true); // 🆕 For loading screen
-  const [showResume, setShowResume] = useState(false);
-  const resumeRef = useRef(null);
+import './global.css';
+
+const MainPage = () => {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const location = useLocation();
+
+  const sectionRefs = {
+    home: homeRef,
+    about: aboutRef,
+    portfolio: portfolioRef,
+    contact: contactRef,
+  };
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // 🆕 Simulated loading
+    if (location.state?.scrollTo) {
+      const ref = sectionRefs[location.state.scrollTo];
+      if (ref?.current) {
+        setTimeout(() => {
+          ref.current.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
+
+  return (
+    <>
+      <Navbar />
+      <div ref={homeRef}>
+        <Intro />
+      </div>
+      <div ref={aboutRef}>
+        <About />
+      </div>
+      <div ref={portfolioRef}>
+        <Portfolio />
+      </div>
+      <Internship />
+      <div ref={contactRef}>
+        <Cont />
+      </div>
+    </>
+  );
+};
+
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
-  const handleResumeClick = () => {
-    setShowResume((prev) => {
-      const next = !prev;
-      setTimeout(() => {
-        if (next && resumeRef.current) {
-          resumeRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      return next;
-    });
-  };
-
-  // 🆕 Show loader before rendering the actual portfolio
-  if (loading) {
-    return <Loader/>;
-  }
+  if (loading) return <Loader />;
 
   return (
-    <div className="App">
-      <Navbar onResumeClick={handleResumeClick} />
-      <Intro />
-      <About />
-      <Portfolio />
-      <Internship />
-      {showResume && <Resume ref={resumeRef} />}
-      <Cont />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/resume" element={<FullPage />} />
+      </Routes>
+    </Router>
   );
 }
 

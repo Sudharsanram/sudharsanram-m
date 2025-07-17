@@ -1,4 +1,6 @@
+// navbar.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 import contact from '../../assert/icons8-topic-48.png';
 import about from "../../assert/icons8-user.gif";
@@ -8,10 +10,11 @@ import hom from "../../assert/icons8-home.gif";
 
 const Navbar = ({ onResumeClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleClick = (callback) => {
+  const handleNavClick = (sectionId) => {
     setMenuOpen(false);
-    if (callback) callback();
+    navigate('/', { state: { scrollTo: sectionId } });
   };
 
   return (
@@ -21,18 +24,27 @@ const Navbar = ({ onResumeClick }) => {
       </div>
 
       <div className={`menu ${menuOpen ? "active" : ""}`}>
-        <a href="#home" className="menulist" onClick={() => handleClick()}>Home <img src={hom} alt="" className='abt' /></a>
-        <a href="#about" className="menulist" onClick={() => handleClick()}>About <img src={about} alt="" className='abt' /></a>
-        <a href="#portfolio" className="menulist" onClick={() => handleClick()}>Portfolio <img src={por} alt="" className='abt' /></a>
-        <span className="menulist" onClick={() => handleClick(onResumeClick)}>Resume <img src={res} alt="" className='abt' /></span>
-        <a href="#contact" className="menulist contact-menu-item" onClick={() => handleClick()}>Contact Me</a>
-        
+        <button className="menulist" onClick={() => handleNavClick('home')}>
+          Home <img src={hom} alt="" className='abt' />
+        </button>
+        <button className="menulist" onClick={() => handleNavClick('about')}>
+          About <img src={about} alt="" className='abt' />
+        </button>
+        <button className="menulist" onClick={() => handleNavClick('portfolio')}>
+          Portfolio <img src={por} alt="" className='abt' />
+        </button>
+        <a href="/resume" className="menulist" onClick={() => setMenuOpen(false)}>
+          Resume <img src={res} alt="" className="abt" />
+        </a>
+        <button className="menulist contact-menu-item" onClick={() => handleNavClick('contact')}>
+          Contact Me
+        </button>
       </div>
-        <a href="#contact" className="menubtn desktop-only" onClick={() => handleClick()}>
+
+      <button className="menubtn desktop-only" onClick={() => handleNavClick('contact')}>
         <img src={contact} alt="contact" className="menubtnimg" />
         <span className="cont">Contact Me</span>
-        </a>
-      
+      </button>
     </nav>
   );
 };

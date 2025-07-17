@@ -34,6 +34,7 @@
   color: white;
   cursor: pointer;
   text-decoration: none;
+  background-color: transparent;
 }
 
 .menulist::after {
@@ -92,6 +93,11 @@
   height: 1.7rem;
   margin-left: 0.4rem;
 }
+.resume-section {
+  scroll-margin-top: 6rem; /* Prevent hiding under navbar */
+}
+
+
 
 /* ───── Responsive ───── */
 @media screen and (max-width: 840px) {
@@ -111,9 +117,10 @@
     left: 0;
     width: 100%;
     background-color: #fff;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.2rem;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -125,15 +132,27 @@
 
   .menulist {
     color: #262150;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.5rem;
     text-align: center;
     font-size: 1.1rem;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
+    font-weight: bold;
+    width: 90%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
   }
 
   .menulist::after {
     display: none; /* Disable underline animation on mobile */
+  }
+
+  .abt {
+    height: 1.5rem;
+    margin-left: 0.4rem;
   }
 
   .menubtn {

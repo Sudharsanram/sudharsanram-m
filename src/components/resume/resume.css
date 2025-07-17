@@ -29,36 +29,6 @@
   animation: fadeSlideIn 0.8s ease forwards;
 }
 
-.download-btn-container {
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-}
-
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 2rem;
-  background-color: #0077ff;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-  background-color: #005fcb;
-}
-
-.dwn {
-  height: 1.6rem;
-  width: 1.6rem;
-}
 
 .resume-viewer {
   margin-top: 2rem;

@@ -27,7 +27,8 @@ const Resume = React.forwardRef((props, ref) => {
   }, []);
 
   return (
-    <section ref={ref} className="resume-section">
+    <section ref={ref} id="resume" className="resume-section">
+
       <h2 ref={titleRef} className="resume-title">
         My Resume
       </h2>
