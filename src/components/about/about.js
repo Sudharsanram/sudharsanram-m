@@ -37,7 +37,7 @@ const About = () => {
             📊 Currently hold a CGPA of <span className="col">8.03</span> (till 5th semester).
           </span>
           <span className='text1'>
-            With hands-on experience in IoT development, I’ve created projects using<span className="col">Arduino Uno, ESP32, and STM32,</span>  bringing intelligent systems to life. One of my recent projects is an Online Skill Assessment System.
+            With hands-on experience in IoT development, I’ve created projects using<span className="col"> Arduino Uno, ESP32, and STM32,</span>  bringing intelligent systems to life. One of my recent projects is an Online Skill Assessment System.
           </span>
           <span className='text1'>
             🎯 Passionate about solving real-world problems, competing in hackathons, and exploring new places.
