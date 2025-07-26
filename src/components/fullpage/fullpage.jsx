@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../navbar/navbar';
 import './fullpage.css';
 import dwn from '../../assert/icons8-export-pdf.gif';
+import StarfieldBackground from "../background/StarfieldBackground";
 
 const DownloadButton = () => (
   <div className="download-btn-container">
@@ -18,6 +19,9 @@ const DownloadButton = () => (
 const FullPage = ({ onResumeClick }) => {
   return (
     <div className="full-resume-page">
+      {/* Render the StarfieldBackground component here */}
+      <StarfieldBackground />
+
       {/* ✅ Pass down the scroll handler */}
       <Navbar onResumeClick={onResumeClick} />
 

@@ -64,7 +64,7 @@ form {
   position: absolute;
   top: -0.7rem;
   left: 1rem;
-  background-color: #262051;
+  background-color: black;
   padding: 0 0.5rem;
   font-weight: bold;
   font-size: 0.9rem;
@@ -74,11 +74,11 @@ form {
 
 input,
 textarea {
-  background: #262051;
+  background: transparent;
   border: 3px solid #fddbb0;
   border-radius: 20px;
   padding: 1.2rem 1rem 1rem;
-  color: black;
+  color: white;
   font-size: 1rem;
   width: 100%;
   outline: none;

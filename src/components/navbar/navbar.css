@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #262150;
+  background-color: transparent;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   will-change: transform;
   backface-visibility: hidden;
@@ -170,4 +170,27 @@
   .desktop-only {
     display: none;
   }
+}
+/* Add this to navbar.css or a general stylesheet */
+.navbar {
+  /* ... existing styles */
+  height: 5rem; /* Ensure this is correctly set and consistent */
+  z-index: 1000;
+  /* Add a background color if it's currently transparent to avoid text showing through the navbar */
+  background-color: rgba(0, 0, 0, 0.7); /* Example: semi-transparent black */
+  backdrop-filter: blur(5px); /* Optional: add a blur effect */
+}
+
+/* This is the key CSS for content that scrolls *under* the fixed navbar */
+.home-section,
+.about-section,
+.portfolio-section,
+.resume-section, /* You already have this, make sure it's applied */
+.contact-section {
+  scroll-margin-top: 5rem; /* This value should match or be slightly larger than your navbar's height */
+}
+
+/* If you have a general wrapper for all your scrollable content below the navbar, use padding-top on it */
+.main-page-content {
+  padding-top: 5rem; /* Ensures the initial content starts below the navbar */
 }

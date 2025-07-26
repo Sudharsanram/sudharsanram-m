@@ -1,13 +1,14 @@
 .full-resume-page {
-  background-color: transparent;
+  background-color: transparent; /* This is good, allows the starfield to show */
   min-height: 100vh;
-  padding-top: 6rem; /* Account for fixed navbar */
+  padding-top: 6rem;
 }
 
 .resume-wrapper {
   display: flex;
   justify-content: center;
   padding: 2rem;
+  /* Make sure this wrapper doesn't have a solid background itself if you want stars to show through any gaps */
 }
 
 .resume-iframe {
@@ -15,7 +16,7 @@
   height: 90vh;
   border: 2px solid #fddbb0;
   border-radius: 10px;
-  background-color: white;
+  background-color: white; /* The iframe itself will have a white background, covering stars behind it */
 }
 
 .download-btn-container {

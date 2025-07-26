@@ -9,6 +9,7 @@ import Portfolio from "./components/portfolio/portfolio";
 import Internship from "./components/internship/internship";
 import FullPage from "./components/fullpage/fullpage";
 import Loader from "./components/loading/loading";
+import StarfieldBackground from "./components/background/StarfieldBackground";
 
 import './global.css';
 
@@ -41,6 +42,7 @@ const MainPage = () => {
 
   return (
     <>
+      <StarfieldBackground />
       <Navbar />
       <div ref={homeRef}>
         <Intro />
