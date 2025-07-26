@@ -12,6 +12,7 @@ import Loader from "./components/loading/loading";
 import StarfieldBackground from "./components/background/StarfieldBackground";
 
 import './global.css';
+import Footer from "./components/footer/footer";
 
 const MainPage = () => {
   // Create refs for each scrollable section
@@ -71,6 +72,7 @@ const MainPage = () => {
       <div id="contact" ref={contactRef} className="contact-section">
         <Cont />
       </div>
+       <Footer />
     </>
   );
 };

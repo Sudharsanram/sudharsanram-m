@@ -1,0 +1,106 @@
+/* components/footer/footer.css */
+
+.footer-container {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  backdrop-filter: blur(5px); /* Subtle blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
+  color: #f0f0f0; /* Light grey text color */
+  padding: 1.5rem 2rem; /* Padding top/bottom and left/right */
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow at the top */
+  margin-top: 0.5rem; /* Pushes the footer to the bottom if parent is flex column */
+}
+
+.footer-content {
+  max-width: 100rem; /* Match your navbar's max-width for consistency */
+  margin: 0 auto; /* Center content */
+  display: flex;
+  flex-direction: row; /* Always keep as row for single line */
+  align-items: center; /* Vertically align items in the middle */
+  justify-content: center; /* Center items horizontally */
+  gap: 1.5rem; /* Increased gap between name and icons for better spacing */
+  flex-wrap: wrap; /* Allow wrapping if content is too long on very small screens */
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0; /* Remove default paragraph margin */
+  color: #f0f0f0; /* Ensure text color is visible against the footer background */
+}
+
+.footer-social-icons { /* Container for the social icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem; /* Gap between individual icons */
+  margin: 0; /* Remove any default margin */
+}
+
+.f-icon { /* Styling for individual social icons */
+  height: 1.8rem; /* Slightly increased size for better visibility */
+  width: 1.8rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.f-icon:hover {
+  box-shadow: 0 0 20px #00f2fe, 0 0 30px #4facfe;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 840px) {
+  .footer-container {
+    padding: 1rem 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .footer-name {
+    font-size: 0.9rem;
+  }
+
+  .footer-social-icons {
+    gap: 0.6rem; /* Slightly reduce gap between icons */
+  }
+
+  .f-icon {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+  .footer-content {
+    /* flex-direction: row; is inherited */
+    gap: 1rem; /* Adjusted gap */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-container {
+    padding: 0.8rem 1rem; /* Further adjust padding for very small screens */
+  }
+
+  .footer-name {
+    font-size: 0.8rem;
+  }
+
+  .footer-social-icons {
+    gap: 0.4rem; /* Further reduce gap between icons */
+  }
+
+  .f-icon {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+  .footer-content {
+    /* Removed flex-direction: column;
+       Now it will remain flex-direction: row; and use flex-wrap if needed. */
+    gap: 0.5rem; /* Adjusted gap for very small screens */
+  }
+}
