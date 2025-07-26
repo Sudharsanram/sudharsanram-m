@@ -27,17 +27,17 @@ const About = () => {
             About Me <img src={ser} alt="" />
           </h1>
           <span className='text1'>
-            👋 Hi, I’m Sudharsan Ram M, a curious mind and tech enthusiast pursuing Computer Science and Engineering (IoT) at Saveetha Engineering College, Chennai.
+            👋 Hi, I’m <span className="col">Sudharsan Ram M</span>, a curious mind and tech enthusiast pursuing <span className="col">Computer Science and Engineering (IoT)</span> at <span className="col">Saveetha Engineering College</span>, Chennai.
           </span>
           <span className='text1'>
-            I specialize in building smart solutions that blend software and hardware. My skills span across C, Java, Python, HTML, CSS, JavaScript, and MySQL.
-            I work with modern frameworks and tools like React.js, Node.js, Spring Boot, Django, Figma, OpenCV, Pandas, and NumPy.
+            I specialize in building smart solutions that blend software and hardware. My skills span across <span className="col">C, Java, Python, HTML, CSS, JavaScript, and MySQL.</span>
+            I work with modern frameworks and tools like <span className="col">React.js, Node.js, Spring Boot, Django, Figma, OpenCV, Pandas, and NumPy.</span>
           </span>
           <span className='text1'>
-            📊 Currently hold a CGPA of 8.03 (till 5th semester).
+            📊 Currently hold a CGPA of <span className="col">8.03</span> (till 5th semester).
           </span>
           <span className='text1'>
-            With hands-on experience in IoT development, I’ve created projects using Arduino Uno, ESP32, and STM32, bringing intelligent systems to life. One of my recent projects is an Online Skill Assessment System.
+            With hands-on experience in IoT development, I’ve created projects using<span className="col">Arduino Uno, ESP32, and STM32,</span>  bringing intelligent systems to life. One of my recent projects is an Online Skill Assessment System.
           </span>
           <span className='text1'>
             🎯 Passionate about solving real-world problems, competing in hackathons, and exploring new places.

@@ -2,6 +2,12 @@
 * {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* ✅ Prevent horizontal scroll globally */
 }
 
 /* ------------------ About Section ------------------ */
@@ -10,21 +16,24 @@
   color: white;
   font-size: 2rem;
   z-index: 1;
-  margin: 6rem 12rem;
+  margin: 5rem auto;
   padding: 2rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1); 
+ /*  border-radius: 20px;
+ background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(65px);
   -webkit-backdrop-filter: blur(65px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 100px;*/
+  max-width: 1200px;     /* ✅ Keep it centered and not too wide */
+  width: 100%;
+  overflow-x: hidden;    /* ✅ Prevent inner content from causing scroll */
 }
 
 /* ------------------ Flex Container ------------------ */
 .about-container {
   display: flex;
+  flex-wrap: wrap;       /* ✅ Wrap on smaller screens */
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -34,6 +43,7 @@
 .about-animation {
   flex: 1;
   max-width: 40%;
+  min-width: 280px;
 }
 
 .about-animation > div {
@@ -44,7 +54,9 @@
 /* ------------------ Text Content ------------------ */
 .about-wrapper {
   flex: 2;
+  min-width: 300px;
   text-align: left;
+  word-break: break-word;
 }
 
 .head {
@@ -100,7 +112,9 @@
   gap: 1rem;
   margin-top: 1rem;
 }
-
+.col{
+  color: yellowgreen;
+}
 /* ------------------ Responsive: Tablets & Below ------------------ */
 @media screen and (max-width: 840px) {
   .about-section {
