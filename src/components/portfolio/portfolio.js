@@ -4,6 +4,7 @@ import './portfolio.css';
 import proj1 from '../../assert/proj.png';
 import pr from '../../assert/icons8-project.gif';
 import pro from '../../assert/icons8-blog.gif';
+import po from "../../assert/image.png";
 
 import Certificate from '../certificate/certificate';
 
@@ -47,6 +48,7 @@ const Portfolio = () => {
       description:
         'Developed an AI-based tool for early melanoma detection using dermatoscopic images. Integrated pre-trained CNN models (AlexNet, ResNet50, VGG16, VGG19) for accurate classification of skin lesions. Designed a user-friendly web interface for dermatologists to upload images and receive real-time diagnostic predictions with confidence scores.',
       github: 'https://github.com/Sudharsanram/Melanoma-Detection-Using-Machine-Learning-Techniques',
+      link: null,
       image: proj1,
     },
     {
@@ -54,7 +56,16 @@ const Portfolio = () => {
       description:
         'Designed a road safety system using STM32 and GPS to detect hazardous zones. Provided real-time alerts via LEDs, buzzer, and app integration for incoming vehicles. Integrated Google Maps API to display barricade locations in the app.',
       github: null,
+      link: null,
       image: null,
+    },
+    {
+      name: 'Online Skill Assessment',
+      description:
+        'This is a full-stack web application designed for users to test their knowledge across various technical subjects. It features a secure login system, a user dashboard to attempt quizzes and view past results, and a separate admin panel. The administrator has special privileges to add, manage, and update the quiz questions and can also monitor the performance and results of all registered users. The frontend is built with React for a modern, interactive user interface, while the backend leverages Google Firebase for secure user authentication and a Firestore database to store all application data.',
+      github: 'https://github.com/Sudharsanram/online-skillassessment.git',
+      link: 'https://online-skillassessment.vercel.app/',
+      image: po,
     },
   ];
 
@@ -88,7 +99,7 @@ const Portfolio = () => {
       <div className="portfolio-container">
         {/* LEFT: Portfolio Content */}
         <div className="portfolio-content">
-          {/* Single Heading — visible on all devices */}
+          {/* Heading */}
           <div className="portfolio-heading">
             <h1 className="port animate-in" ref={titleRef}>
               PORTFOLIO
@@ -96,6 +107,7 @@ const Portfolio = () => {
             <img src={pro} alt="Portfolio Icon" className="pro" />
           </div>
 
+          {/* Tabs */}
           <div className="portfolio-buttons">
             <button
               className={activeTab === 'skills' ? 'tab-btn active' : 'tab-btn'}
@@ -117,6 +129,7 @@ const Portfolio = () => {
             </button>
           </div>
 
+          {/* Skills Tab */}
           {activeTab === 'skills' && (
             <>
               <h2 className="portfolio-title">TECHNICAL SKILLS</h2>
@@ -135,12 +148,14 @@ const Portfolio = () => {
             </>
           )}
 
+          {/* Certificates Tab */}
           {activeTab === 'internship' && (
             <div className="certificate-tab-wrapper">
               <Certificate />
             </div>
           )}
 
+          {/* Projects Tab */}
           {activeTab === 'projects' && (
             <div className="projects-section">
               <h2 className="portfolio-title">PROJECTS</h2>
@@ -169,6 +184,11 @@ const Portfolio = () => {
                             View on GitHub
                           </a>
                         )}
+                        {proj.link && (
+                          <a href={proj.link} target="_blank" rel="noopener noreferrer">
+                            Visit Website
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -178,7 +198,7 @@ const Portfolio = () => {
           )}
         </div>
 
-        {/* RIGHT: JSON Animation */}
+        {/* RIGHT: Lottie Animation */}
         <div className="portfolio-animation">
           <Lottie animationData={animationData} loop={true} />
         </div>
