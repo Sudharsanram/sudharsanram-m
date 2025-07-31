@@ -12,6 +12,7 @@ import cer7 from '../../assert/cer7.png';
 import cer8 from '../../assert/cer8.png'; 
 import cer9 from '../../assert/nptel.png'; 
 import cer10 from '../../assert/cer10.png'; 
+import cer11 from '../../assert/novitech.png';
 
 const certificateData = [
   {
@@ -73,7 +74,14 @@ const certificateData = [
     title: "Datathon-2024",
     organization: "IBM",
     image: cer1
+  },
+  {
+    id: 11,
+    title: "BooTCamp on IoT Web interface Development",
+    organization: "NoviTech",
+    image: cer11
   }
+
   
   
 ];
