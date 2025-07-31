@@ -1,4 +1,3 @@
-// navbar.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './navbar.css';
@@ -8,13 +7,24 @@ import res from "../../assert/icons8-document.gif";
 import por from "../../assert/icons8-scroll.gif";
 import hom from "../../assert/icons8-home.gif";
 
-const Navbar = ({ onResumeClick }) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  // This function is now simpler. It closes the menu and navigates right away.
   const handleNavClick = (sectionId) => {
     setMenuOpen(false);
     navigate('/', { state: { scrollTo: sectionId } });
+  };
+
+  // This handles the resume link click
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    // Use a small delay just to let the menu closing animation start
+    setTimeout(() => {
+      window.location.href = '/resume';
+    }, 150);
   };
 
   return (
@@ -33,7 +43,7 @@ const Navbar = ({ onResumeClick }) => {
         <button className="menulist" onClick={() => handleNavClick('portfolio')}>
           Portfolio <img src={por} alt="" className='abt' />
         </button>
-        <a href="/resume" className="menulist" onClick={() => setMenuOpen(false)}>
+        <a href="/resume" className="menulist" onClick={handleResumeClick}>
           Resume <img src={res} alt="" className="abt" />
         </a>
         <button className="menulist contact-menu-item" onClick={() => handleNavClick('contact')}>
