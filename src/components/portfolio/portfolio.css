@@ -216,12 +216,12 @@
 }
 
 /* === Melanoma Project Custom Colors === */
-.melanoma-bg .flip-card-front,
+/*.melanoma-bg .flip-card-front,
 .melanoma-bg .flip-card-back {
   background: linear-gradient(135deg, , transparent);
-/*  border: 2px solid #ff9f1c;*/
+/*  border: 2px solid #ff9f1c;
   color: #fffae3;
-}
+}*/
 
 /*.melanoma-bg .flip-card-back a {
   color: #ff9f1c;
