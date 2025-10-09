@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import image from "../../assert/image.jpg";
+import image from "../../assert/image1.jpg";
 import "./intro.css";
 
 const roles = ["FULL STACK DEVELOPER", "DEVELOPER"];
